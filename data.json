@@ -6,6 +6,18 @@
    "at": 1794476931207
   }
  ],
- "cases": [],
+ "cases": [
+  {
+   "id": "9a0f159910",
+   "caseNo": "1",
+   "title": "หา Switch",
+   "detail": "หา Switch ที่หายไป",
+   "date": "2026-11-12",
+   "status": "กำลังดำเนินการ",
+   "owner": "4485c7755c",
+   "createdAt": 1794476982283,
+   "createdBy": "4485c7755c"
+  }
+ ],
  "logs": []
 }
