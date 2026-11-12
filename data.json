@@ -44,7 +44,9 @@
    "owner": "466fc9248e",
    "category": "Network",
    "location": "ballroom A (M floor)",
-   "members": [],
+   "members": [
+    "4485c7755c"
+   ],
    "createdAt": 1794481104351,
    "createdBy": "4485c7755c"
   }
@@ -129,6 +131,14 @@
    "by": "4485c7755c",
    "byName": "Nice",
    "at": 1794481174445
+  },
+  {
+   "id": "1680f81985",
+   "caseId": "b4a1573639",
+   "text": "Nice เข้าร่วมเคส",
+   "by": "4485c7755c",
+   "byName": "Nice",
+   "at": 1794481325339
   }
  ]
 }
