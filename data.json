@@ -47,20 +47,6 @@
    "members": [],
    "createdAt": 1794481719863,
    "createdBy": "4485c7755c"
-  },
-  {
-   "id": "246265861d",
-   "caseNo": "test",
-   "title": "test",
-   "detail": "test",
-   "date": "2026-11-12",
-   "status": "กำลังดำเนินการ",
-   "owner": "4485c7755c",
-   "category": "Network",
-   "location": "test",
-   "members": [],
-   "createdAt": 1794481780447,
-   "createdBy": "4485c7755c"
   }
  ],
  "logs": [
