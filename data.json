@@ -35,22 +35,6 @@
    "members": []
   },
   {
-   "id": "b4a1573639",
-   "caseNo": "Open LAN Line port for EVENT apple",
-   "title": "access network LAN Line for customer event apple",
-   "detail": "fide port and send email to Reivenet for open port LAN event apple",
-   "date": "2026-11-12",
-   "status": "กำลังดำเนินการ",
-   "owner": "466fc9248e",
-   "category": "Network",
-   "location": "ballroom A (M floor)",
-   "members": [
-    "4485c7755c"
-   ],
-   "createdAt": 1794481104351,
-   "createdBy": "4485c7755c"
-  },
-  {
    "id": "31eed05a17",
    "caseNo": "Open LAN Line port for EVENT apple",
    "title": "access network LAN Line for customer event apple",
@@ -129,30 +113,6 @@
    "by": "4485c7755c",
    "byName": "Nice",
    "at": 1794479148582
-  },
-  {
-   "id": "ec1ff65642",
-   "caseId": "b4a1573639",
-   "text": "now can fide port LAN is port9 IP:10.165.180.23",
-   "by": "4485c7755c",
-   "byName": "Nice",
-   "at": 1794481168706
-  },
-  {
-   "id": "a6f096380b",
-   "caseId": "b4a1573639",
-   "text": "waiting Reivernet open port",
-   "by": "4485c7755c",
-   "byName": "Nice",
-   "at": 1794481174445
-  },
-  {
-   "id": "1680f81985",
-   "caseId": "b4a1573639",
-   "text": "Nice เข้าร่วมเคส",
-   "by": "4485c7755c",
-   "byName": "Nice",
-   "at": 1794481325339
   }
  ]
 }
