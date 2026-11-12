@@ -47,6 +47,23 @@
    "members": [],
    "createdAt": 1794481719863,
    "createdBy": "4485c7755c"
+  },
+  {
+   "id": "401840e8e0",
+   "caseNo": "test",
+   "title": "test",
+   "detail": "test",
+   "date": "2026-11-12",
+   "status": "กำลังดำเนินการ",
+   "owner": "4485c7755c",
+   "category": "Network",
+   "location": "test",
+   "zone": "1",
+   "marsha": "BKKLA",
+   "photos": [],
+   "members": [],
+   "createdAt": 1794497692839,
+   "createdBy": ""
   }
  ],
  "logs": [
