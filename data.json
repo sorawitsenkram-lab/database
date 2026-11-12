@@ -22,9 +22,7 @@
    "owner": "4485c7755c",
    "createdAt": 1794476982283,
    "createdBy": "4485c7755c",
-   "members": [
-    "d758605df1"
-   ]
+   "members": []
   }
  ],
  "logs": [
@@ -51,6 +49,14 @@
    "by": "d758605df1",
    "byName": "P'Fluk",
    "at": 1794478649359
+  },
+  {
+   "id": "81855a358e",
+   "caseId": "9a0f159910",
+   "text": "P'Fluk ออกจากเคส",
+   "by": "d758605df1",
+   "byName": "P'Fluk",
+   "at": 1794478651999
   }
  ]
 }
