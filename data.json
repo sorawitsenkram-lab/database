@@ -22,7 +22,9 @@
    "owner": "4485c7755c",
    "createdAt": 1794476982283,
    "createdBy": "4485c7755c",
-   "members": []
+   "members": [
+    "d758605df1"
+   ]
   }
  ],
  "logs": [
@@ -57,6 +59,14 @@
    "by": "d758605df1",
    "byName": "P'Fluk",
    "at": 1794478651999
+  },
+  {
+   "id": "b4f64165f4",
+   "caseId": "9a0f159910",
+   "text": "P'Fluk เข้าร่วมเคส",
+   "by": "d758605df1",
+   "byName": "P'Fluk",
+   "at": 1794478657243
   }
  ]
 }
