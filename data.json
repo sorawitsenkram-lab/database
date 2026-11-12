@@ -49,6 +49,20 @@
    ],
    "createdAt": 1794481104351,
    "createdBy": "4485c7755c"
+  },
+  {
+   "id": "31eed05a17",
+   "caseNo": "Open LAN Line port for EVENT apple",
+   "title": "access network LAN Line for customer event apple",
+   "detail": "fide port and send email to Reivenet for open port LAN event apple",
+   "date": "2026-11-12",
+   "status": "กำลังดำเนินการ",
+   "owner": "466fc9248e",
+   "category": "Network",
+   "location": "ballroom A (M floor)",
+   "members": [],
+   "createdAt": 1794481719863,
+   "createdBy": "4485c7755c"
   }
  ],
  "logs": [
