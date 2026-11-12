@@ -1,29 +1,36 @@
-# สมุดบันทึกเคสประจำวัน (GitHub Pages + Supabase)
+# สมุดบันทึกเคสประจำวัน (ฐานข้อมูลอยู่ใน GitHub ล้วนๆ)
 
-ไฟล์ในชุดนี้
-- `index.html`, `style.css`, `app.js` : หน้าเว็บ (วางบน GitHub Pages)
-- `config.js` : ใส่ URL และ key ของ Supabase
-- `schema.sql` : สร้างฐานข้อมูล (ตาราง + ฟังก์ชัน + ระบบป้องกัน)
+ไม่ต้องใช้บริการอื่นเลย: หน้าเว็บอยู่บน GitHub Pages ส่วนข้อมูลเก็บเป็นไฟล์ `data/data.json` ใน GitHub repo
+หน้าเว็บอ่าน/เขียนไฟล์นี้ผ่าน GitHub API ทุกการบันทึกเป็น 1 commit จึงมีประวัติย้อนหลังและสำรองข้อมูลในตัว
 
-## 1) สร้างฐานข้อมูล (ฟรี)
-1. สมัคร/เข้า https://supabase.com แล้วสร้าง Project ใหม่ (ตั้งรหัสผ่านฐานข้อมูลเก็บไว้)
-2. เมนู **SQL Editor → New query** วางโค้ดทั้งไฟล์ `schema.sql`
-3. ก่อนกด Run แก้ `change-me-team` (รหัสทีม) และ `1234` (PIN หลังบ้าน) เป็นของคุณ
-4. กด **Run** ต้องขึ้น Success
+## เลือกวิธีวาง (เลือก 1 แบบ)
+**แบบ A (แนะนำ ข้อมูลเป็นส่วนตัว): 2 repo**
+- repo `case-log` (Public) เก็บหน้าเว็บ: `index.html`, `style.css`, `app.js`, `config.js` และเปิด GitHub Pages
+- repo `case-data` (**Private**) เก็บข้อมูล: อัปโหลดโฟลเดอร์ `data/` ที่มี `data.json`
+- ใน `config.js` ให้ `REPO` ชี้ไปที่ `case-data`
 
-## 2) ตั้งค่าหน้าเว็บ
-1. ใน Supabase ไปที่ **Project Settings → API** คัดลอก **Project URL** และ **anon / publishable key**
-2. เปิด `config.js` วางสองค่านั้นแทนข้อความตัวอย่าง
+**แบบ B (ง่ายสุด): repo เดียว** อัปโหลดทุกอย่างที่ root ของ repo เดียว
+⚠️ ถ้า repo เป็น Public ทุกคนบนอินเทอร์เน็ตจะอ่าน `data/data.json` (ข้อมูลเคสทั้งหมด) ได้ ใช้แบบนี้เมื่อข้อมูลไม่เป็นความลับเท่านั้น
+(repo Private + GitHub Pages ใช้ได้เฉพาะบัญชีแบบเสียเงิน)
 
-## 3) ขึ้น GitHub Pages
-1. สร้าง repository ใหม่บน GitHub แล้วอัปโหลดไฟล์ `index.html`, `style.css`, `app.js`, `config.js`
-2. **Settings → Pages → Source: Deploy from a branch → `main` / `(root)` → Save**
-3. รอ 1-2 นาที ได้ลิงก์ `https://<ชื่อผู้ใช้>.github.io/<ชื่อ repo>/`
-4. เปิดลิงก์ ใส่รหัสทีม แล้วเข้า "🔒 หลังบ้าน" ใส่ PIN เพื่อเพิ่มรายชื่อทีม
+## ขั้นตอน
+1. สร้าง repo ตามแบบที่เลือก แล้วอัปโหลดไฟล์
+2. เปิด Pages: **Settings → Pages → Deploy from a branch → `main` / `(root)`** ที่ repo หน้าเว็บ
+3. แก้ `config.js`: ใส่ `OWNER` (ชื่อผู้ใช้ GitHub) และ `REPO` (repo เก็บข้อมูล)
+4. สร้าง **Token** สำหรับทีม:
+   GitHub → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** → Generate new token
+   - Repository access: **Only select repositories** → เลือก repo เก็บข้อมูล
+   - Permissions → Repository permissions → **Contents: Read and write**
+   - ตั้งวันหมดอายุตามต้องการ แล้ว Generate คัดลอกเก็บไว้
+5. เปิดลิงก์เว็บ (`https://<ชื่อผู้ใช้>.github.io/<repo>/`) วาง Token ในช่องที่ขึ้นมาครั้งแรก (เครื่องจะจำไว้)
+6. เข้า "🔒 หลังบ้าน" ใส่ PIN (ค่าเริ่มต้น `1234`) เพื่อเพิ่มรายชื่อทีม
 
-## ความปลอดภัย
-- ตารางทั้งหมดปิดการเข้าถึงโดยตรง อ่านเขียนได้ผ่านฟังก์ชันที่ตรวจรหัสทีมเท่านั้น
-- anon key เปิดเผยในเว็บได้ตามการออกแบบของ Supabase แต่รหัสทีมและ PIN อยู่ในฐานข้อมูล ห้ามใส่ลงไฟล์บน GitHub
-- ถ้ามีคนออกจากทีม เปลี่ยนรหัสด้วย: `update settings set value='รหัสใหม่' where key='team_key';` ใน SQL Editor
-- เหมาะกับทีมเล็ก ถ้าเคสมีข้อมูลส่วนบุคคลสำคัญ ควรใช้ระบบล็อกอินรายบุคคลแทนรหัสร่วม
-- หน้าเว็บดึงข้อมูลใหม่ทุก 15 วินาที หรือกดปุ่ม "↻ รีเฟรช"
+## เรื่องสำคัญ
+- **ห้ามใส่ Token ลงในไฟล์ใดๆ บน GitHub** (GitHub จะยกเลิก Token อัตโนมัติ) ให้แต่ละคนวางตอนเปิดเว็บเท่านั้น ส่ง Token ให้ทีมผ่านช่องทางส่วนตัว
+- ใครมี Token คือแก้ข้อมูลได้ทั้งหมด PIN หลังบ้านเป็นแค่ตัวกันกดผิดบนหน้าเว็บ ไม่ใช่ระบบความปลอดภัยจริง ถ้า Token รั่ว ให้ Revoke แล้วสร้างใหม่
+- เปลี่ยน PIN: เปิดเว็บ กด F12 → Console วางโค้ดนี้ (แก้ `PINใหม่`) แล้วนำค่าที่ได้ไปใส่ `ADMIN_PIN_SHA256` ใน `config.js`
+  `crypto.subtle.digest("SHA-256",new TextEncoder().encode("PINใหม่")).then(b=>console.log([...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")))`
+- ถ้ามีคนบันทึกพร้อมกัน ระบบอ่านข้อมูลล่าสุดแล้วบันทึกซ้ำให้อัตโนมัติ จึงไม่ทับกัน
+- หน้าเว็บเช็กข้อมูลใหม่ทุก 15 วินาที (ใช้โควตา API น้อยมาก) หรือกด "↻ รีเฟรช"
+- ไฟล์ข้อมูลควรไม่เกิน 1 MB (ประมาณหลายพันเคส) ถ้าใหญ่กว่านั้นควรย้ายไปใช้ฐานข้อมูลจริง
+- ดูประวัติ/ย้อนข้อมูลได้ที่แท็บ Commits ของ repo เก็บข้อมูล
