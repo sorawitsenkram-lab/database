@@ -49,20 +49,6 @@
    ],
    "createdAt": 1794481104351,
    "createdBy": "4485c7755c"
-  },
-  {
-   "id": "56f8a10b08",
-   "caseNo": "dwf",
-   "title": "test",
-   "detail": "esses",
-   "date": "2026-11-12",
-   "status": "กำลังดำเนินการ",
-   "owner": "4485c7755c",
-   "category": "Network",
-   "location": "test",
-   "members": [],
-   "createdAt": 1794481611671,
-   "createdBy": ""
   }
  ],
  "logs": [
@@ -153,22 +139,6 @@
    "by": "4485c7755c",
    "byName": "Nice",
    "at": 1794481325339
-  },
-  {
-   "id": "c27af8f5b4",
-   "caseId": "56f8a10b08",
-   "text": ".",
-   "by": "",
-   "byName": "ไม่ระบุชื่อ",
-   "at": 1794481618379
-  },
-  {
-   "id": "df21b6b630",
-   "caseId": "56f8a10b08",
-   "text": ".",
-   "by": "4485c7755c",
-   "byName": "Nice",
-   "at": 1794481630044
   }
  ]
 }
