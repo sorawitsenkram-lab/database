@@ -142,7 +142,7 @@
    "title": "แก้ printer ใช้ไม่ได้",
    "detail": "ปริ้นไม่ออก",
    "date": "2026-11-13",
-   "status": "กำลังดำเนินการ",
+   "status": "เสร็จสิ้น",
    "owner": "4485c7755c",
    "category": "Printer",
    "location": "หน้า Front",
@@ -178,6 +178,14 @@
    "by": "4485c7755c",
    "byName": "Nice",
    "at": 1794542157829
+  },
+  {
+   "id": "984bb6c35d",
+   "caseId": "e75d92f94b",
+   "text": "เปลี่ยนสถานะเป็น เสร็จสิ้น",
+   "by": "4485c7755c",
+   "byName": "Nice",
+   "at": 1794542202367
   }
  ],
  "properties": [
