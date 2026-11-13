@@ -46,7 +46,7 @@
    "title": "access network LAN Line for customer event apple",
    "detail": "fide port and send email to Reivenet for open port LAN event apple",
    "date": "2026-11-12",
-   "status": "กำลังดำเนินการ",
+   "status": "เสร็จสิ้น",
    "owner": "466fc9248e",
    "category": "Network",
    "location": "ballroom A (M floor)",
@@ -208,6 +208,14 @@
    "by": "",
    "byName": "ไม่ระบุชื่อ",
    "at": 1794547526896
+  },
+  {
+   "id": "5654bc78cc",
+   "caseId": "31eed05a17",
+   "text": "เปลี่ยนสถานะเป็น เสร็จสิ้น",
+   "by": "466fc9248e",
+   "byName": "Phisit",
+   "at": 1794552325014
   }
  ],
  "properties": [
