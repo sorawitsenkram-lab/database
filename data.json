@@ -149,6 +149,23 @@
    ],
    "createdAt": 1794547472727,
    "createdBy": ""
+  },
+  {
+   "id": "c9cd965fad",
+   "caseNo": "",
+   "title": "Switch ไม่ได้ถุกconfig",
+   "detail": "รอให้support เข้ามาconfig",
+   "date": "2026-11-13",
+   "status": "กำลังดำเนินการ",
+   "owner": "4485c7755c",
+   "category": "Network",
+   "location": "server room",
+   "zone": "1",
+   "marsha": "BKKLA",
+   "photos": [],
+   "members": [],
+   "createdAt": 1794551812575,
+   "createdBy": ""
   }
  ],
  "logs": [
