@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>ตั้งรหัสทีม — Case Log</title>
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#070d1a;color:#e8eef9;font:15px/1.65 "Prompt","Sarabun","Noto Sans Thai",system-ui,sans-serif;display:grid;place-items:start center;padding:24px 14px}
+.card{width:min(620px,100%);padding:24px;border-radius:20px;border:1px solid rgba(148,163,184,.2);background:linear-gradient(180deg,#111f3a,#0a1223);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+h1{margin:0 0 4px;font-size:22px}
+p{margin:6px 0;color:#b7c4d8}
+ol{margin:8px 0 14px;padding-left:20px;color:#b7c4d8}
+label{display:block;margin:14px 0 5px;font-size:13px;color:#8fa3bd}
+input[type=password],input[type=text]{width:100%;padding:11px 13px;border-radius:12px;border:1px solid rgba(148,163,184,.25);background:rgba(2,6,15,.6);color:#e8eef9;font:inherit;outline:none}
+input:focus{border-color:#22d3ee;box-shadow:0 0 0 3px rgba(34,211,238,.18)}
+button{margin-top:18px;padding:11px 20px;border:0;border-radius:12px;font:inherit;font-weight:600;color:#04121c;background:linear-gradient(135deg,#22d3ee,#60a5fa);cursor:pointer}
+button:disabled{opacity:.5;cursor:wait}
+.msg{margin-top:14px;padding:11px 14px;border-radius:12px;font-size:14px;display:none}
+.msg.warn{display:block;color:#fde68a;background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.4)}
+.msg.err{display:block;color:#fecaca;background:rgba(248,113,113,.12);border:1px solid rgba(248,113,113,.4)}
+.msg.ok{display:block;color:#bbf7d0;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.4)}
+.chk{display:none;margin-top:10px;font-size:14px;color:#fde68a}
+.chk input{margin-right:8px}
+code{font-family:ui-monospace,Menlo,monospace;color:#67e8f9}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>🔑 ตั้งรหัสทีม</h1>
+  <p>ให้ทุกคนเข้าใช้งานด้วย <b>รหัสทีม</b> ที่คุณตั้งเอง แทนการวาง GitHub Token ทีละคน หน้านี้ทำงานในเครื่องคุณเท่านั้น ไม่ส่งข้อมูลไปที่ไหน</p>
+  <ol>
+    <li>วาง GitHub Token (ที่สร้างไว้ มีสิทธิ์ Contents: Read and write)</li>
+    <li>ตั้งรหัสทีมที่ต้องการ แล้วกดสร้างไฟล์</li>
+    <li>นำไฟล์ <code>auth.json</code> ที่ได้ไปอัปโหลดไว้ที่ root ของ repo (ข้างๆ <code>index.html</code>) แล้ว Commit</li>
+  </ol>
+
+  <label for="tok">GitHub Token</label>
+  <input id="tok" type="password" autocomplete="off" placeholder="github_pat_...">
+  <label for="code">รหัสทีม (ที่จะให้ทุกคนพิมพ์ตอนเข้าเว็บ)</label>
+  <input id="code" type="text" autocomplete="off" placeholder="ตั้งเอง เช่น วลีสั้นๆ ที่จำง่าย">
+  <label for="code2">ยืนยันรหัสทีมอีกครั้ง</label>
+  <input id="code2" type="text" autocomplete="off">
+
+  <div id="weak" class="msg"></div>
+  <label class="chk" id="riskRow"><input type="checkbox" id="risk">ฉันเข้าใจความเสี่ยง และต้องการใช้รหัสนี้</label>
+
+  <button id="go">สร้างไฟล์ auth.json</button>
+  <div id="out" class="msg"></div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const b64=u=>{let s="";u.forEach(x=>s+=String.fromCharCode(x));return btoa(s)};
+const unb64=x=>Uint8Array.from(atob(x),c=>c.charCodeAt(0));
+// ---- ENC-START ----
+async function encryptAuth(token,code){
+  const salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12)),iter=310000;
+  const km=await crypto.subtle.importKey("raw",new TextEncoder().encode(code),"PBKDF2",false,["deriveKey"]);
+  const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt,iterations:iter,hash:"SHA-256"},km,{name:"AES-GCM",length:256},false,["encrypt","decrypt"]);
+  const ct=new Uint8Array(await crypto.subtle.encrypt({name:"AES-GCM",iv},key,new TextEncoder().encode(token)));
+  return {v:1,iter,salt:b64(salt),iv:b64(iv),data:b64(ct)};
+}
+// ---- ENC-END ----
+async function verify(a,code,token){
+  const km=await crypto.subtle.importKey("raw",new TextEncoder().encode(code),"PBKDF2",false,["deriveKey"]);
+  const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:unb64(a.salt),iterations:a.iter,hash:"SHA-256"},km,{name:"AES-GCM",length:256},false,["decrypt"]);
+  return new TextDecoder().decode(await crypto.subtle.decrypt({name:"AES-GCM",iv:unb64(a.iv)},key,unb64(a.data)))===token;
+}
+const isWeak=c=>c.length<8||/^\d+$/.test(c);
+function showMsg(el,cls,t){el.className="msg "+cls;el.textContent=t}
+$("code").addEventListener("input",()=>{
+  const c=$("code").value.trim(),w=$("weak");
+  if(c&&isWeak(c)){
+    showMsg(w,"warn","⚠️ รหัสสั้นหรือเป็นตัวเลขล้วน (เช่น 1234) เดาได้ง่ายมาก ไฟล์ auth.json อยู่ใน repo ที่คนอื่นเปิดดูได้ ผู้ไม่หวังดีสามารถลองเดารหัสในเครื่องตัวเองได้ไม่จำกัดครั้ง และถ้าเดาถูกจะได้ Token ไปแก้หรือลบข้อมูลของคุณได้ แนะนำให้ใช้วลียาวอย่างน้อย 10 ตัวอักษรขึ้นไป");
+    $("riskRow").style.display="block";
+  }else{w.className="msg";$("riskRow").style.display="none";$("risk").checked=false}
+});
+$("go").onclick=async()=>{
+  const out=$("out"),tok=$("tok").value.trim(),code=$("code").value.trim(),code2=$("code2").value.trim();
+  if(!/^(github_pat_|ghp_|gho_)/.test(tok))return showMsg(out,"err","Token ไม่ถูกต้อง ต้องขึ้นต้นด้วย github_pat_ (คัดลอกให้ครบ)");
+  if(!code)return showMsg(out,"err","กรุณาตั้งรหัสทีม");
+  if(code!==code2)return showMsg(out,"err","รหัสทีมสองช่องไม่ตรงกัน");
+  if(isWeak(code)&&!$("risk").checked)return showMsg(out,"err","รหัสนี้เดาง่าย กรุณาตั้งรหัสที่ยาวกว่านี้ หรือติ๊กยืนยันว่าเข้าใจความเสี่ยง");
+  $("go").disabled=true;showMsg(out,"ok","กำลังเข้ารหัส...");
+  try{
+    const a=await encryptAuth(tok,code);
+    if(!(await verify(a,code,tok)))throw new Error("ตรวจสอบไม่ผ่าน");
+    const blob=new Blob([JSON.stringify(a)],{type:"application/json"}),el=document.createElement("a");
+    el.href=URL.createObjectURL(blob);el.download="auth.json";document.body.appendChild(el);el.click();el.remove();
+    showMsg(out,"ok","✓ สร้าง auth.json แล้ว (ทดสอบถอดรหัสผ่านแล้ว) นำไฟล์นี้ไปอัปโหลดที่ root ของ repo แล้ว Commit จากนั้นทุกคนเปิดเว็บแล้วพิมพ์รหัสทีมได้เลย");
+  }catch(e){showMsg(out,"err","เกิดข้อผิดพลาด: "+(e&&e.message||e)+" (หน้านี้ต้องเปิดผ่าน https หรือ localhost)")}
+  $("go").disabled=false;
+};
+</script>
+</body>
+</html>
