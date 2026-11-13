@@ -166,6 +166,23 @@
    "members": [],
    "createdAt": 1794551812575,
    "createdBy": ""
+  },
+  {
+   "id": "8ef560c15e",
+   "caseNo": "",
+   "title": "error GMS",
+   "detail": "error GMS databases now back to normal Lucas update GMS then update database all outlet",
+   "date": "2026-11-13",
+   "status": "เสร็จสิ้น",
+   "owner": "466fc9248e",
+   "category": "POS/PMS",
+   "location": "All outlet",
+   "zone": "1",
+   "marsha": "BKKBR",
+   "photos": [],
+   "members": [],
+   "createdAt": 1794552418448,
+   "createdBy": "466fc9248e"
   }
  ],
  "logs": [
