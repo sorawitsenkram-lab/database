@@ -125,6 +125,13 @@
    "name": "The Ritz Carlton One Bangkok",
    "zone": "4",
    "at": 1794535491371
+  },
+  {
+   "id": "ed30797912",
+   "code": "BKKOX",
+   "name": "Moxy Hotel Bangkok",
+   "zone": "4",
+   "at": 1794535588861
   }
  ]
 }
