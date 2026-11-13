@@ -75,23 +75,6 @@
    "createdBy": ""
   },
   {
-   "id": "7ace16ff3d",
-   "caseNo": "test",
-   "title": "f",
-   "detail": "f",
-   "date": "2026-11-13",
-   "status": "กำลังดำเนินการ",
-   "owner": "0e10ff86cc",
-   "category": "POS/PMS",
-   "location": "f",
-   "zone": "4",
-   "marsha": "BKKRB",
-   "photos": [],
-   "members": [],
-   "createdAt": 1794527342606,
-   "createdBy": "0e10ff86cc"
-  },
-  {
    "id": "25989fd093",
    "caseNo": "#344854227",
    "title": "request ADID pkunc943",
