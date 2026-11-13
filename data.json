@@ -97,6 +97,13 @@
    "name": "The Athenee Hotel, a Luxury Collection Hotel, Bangkok",
    "zone": "1",
    "at": 1794535320282
+  },
+  {
+   "id": "3923c3134c",
+   "code": "BKKBR",
+   "name": "Renaissance Bangkok Ratchaprasong Hotel",
+   "zone": "1",
+   "at": 1794535343564
   }
  ]
 }
