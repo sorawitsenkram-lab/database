@@ -118,6 +118,13 @@
    "name": "Courtyard by Marriott Bangkok",
    "zone": "1",
    "at": 1794535397728
+  },
+  {
+   "id": "96fd77cf4d",
+   "code": "BKKRB",
+   "name": "The Ritz Carlton One Bangkok",
+   "zone": "4",
+   "at": 1794535491371
   }
  ]
 }
