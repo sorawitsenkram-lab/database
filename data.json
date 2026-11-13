@@ -223,5 +223,9 @@
    "zone": "4",
    "at": 1794535658440
   }
- ]
+ ],
+ "settings": {
+  "pinSalt": "828050935a06e2fc9ddf",
+  "pinHash": "6d3e5a0c5a658ce8748d05448268474cc7f077ce8e6db924adf0f5219aceb968"
+ }
 }
