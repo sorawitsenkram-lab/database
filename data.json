@@ -135,6 +135,23 @@
    "members": [],
    "createdAt": 1794541925711,
    "createdBy": "4485c7755c"
+  },
+  {
+   "id": "e75d92f94b",
+   "caseNo": "",
+   "title": "แก้ printer ใช้ไม่ได้",
+   "detail": "ปริ้นไม่ออก",
+   "date": "2026-11-13",
+   "status": "กำลังดำเนินการ",
+   "owner": "4485c7755c",
+   "category": "Network",
+   "location": "หน้า Front",
+   "zone": "1",
+   "marsha": "BKKLA",
+   "photos": [],
+   "members": [],
+   "createdAt": 1794542027881,
+   "createdBy": "4485c7755c"
   }
  ],
  "logs": [
