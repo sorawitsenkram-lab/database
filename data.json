@@ -130,6 +130,25 @@
    "members": [],
    "createdAt": 1794542027881,
    "createdBy": "4485c7755c"
+  },
+  {
+   "id": "266201ae79",
+   "caseNo": "",
+   "title": "เปลี่ยน switch",
+   "detail": "EOL",
+   "date": "2026-11-13",
+   "status": "กำลังดำเนินการ",
+   "owner": "4485c7755c",
+   "category": "Network",
+   "location": "FB",
+   "zone": "1",
+   "marsha": "",
+   "photos": [],
+   "members": [
+    "73403856b4"
+   ],
+   "createdAt": 1794547472727,
+   "createdBy": ""
   }
  ],
  "logs": [
