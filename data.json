@@ -116,6 +116,25 @@
    "members": [],
    "createdAt": 1794541811379,
    "createdBy": "4485c7755c"
+  },
+  {
+   "id": "276ff28f38",
+   "caseNo": "#344847577",
+   "title": "request ADID nsiri323",
+   "detail": "",
+   "date": "2026-11-13",
+   "status": "กำลังดำเนินการ",
+   "owner": "4485c7755c",
+   "category": "Email/Account",
+   "location": "HR",
+   "zone": "1",
+   "marsha": "BKKLA",
+   "photos": [
+    "photos/1794541922787-80e381b9c6.jpg"
+   ],
+   "members": [],
+   "createdAt": 1794541925711,
+   "createdBy": "4485c7755c"
   }
  ],
  "logs": [
