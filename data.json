@@ -109,7 +109,7 @@
    "category": "Email/Account",
    "location": "FO",
    "zone": "1",
-   "marsha": "",
+   "marsha": "BKKLA",
    "photos": [
     "photos/1794541712158-3728583ca8.jpg"
    ],
@@ -126,6 +126,14 @@
    "by": "4485c7755c",
    "byName": "Nice",
    "at": 1794535124522
+  },
+  {
+   "id": "9effe4276e",
+   "caseId": "3abadf106c",
+   "text": "เปลี่ยน MARSHA เป็น BKKLA",
+   "by": "4485c7755c",
+   "byName": "Nice",
+   "at": 1794541874413
   }
  ],
  "properties": [
