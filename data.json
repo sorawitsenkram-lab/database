@@ -132,6 +132,13 @@
    "name": "Moxy Hotel Bangkok",
    "zone": "4",
    "at": 1794535588861
+  },
+  {
+   "id": "1c741b4abd",
+   "code": "BKKEF",
+   "name": "Marriott Executive Apartments, Sukhumvit 50",
+   "zone": "4",
+   "at": 1794535638522
   }
  ]
 }
