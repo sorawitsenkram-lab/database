@@ -111,6 +111,13 @@
    "name": "JW Marriott Hotel Bangkok",
    "zone": "1",
    "at": 1794535368629
+  },
+  {
+   "id": "b63d6da424",
+   "code": "BKKCY",
+   "name": "Courtyard by Marriott Bangkok",
+   "zone": "1",
+   "at": 1794535397728
   }
  ]
 }
