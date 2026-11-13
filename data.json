@@ -104,6 +104,13 @@
    "name": "Renaissance Bangkok Ratchaprasong Hotel",
    "zone": "1",
    "at": 1794535343564
+  },
+  {
+   "id": "ea7970857a",
+   "code": "BKKDT",
+   "name": "JW Marriott Hotel Bangkok",
+   "zone": "1",
+   "at": 1794535368629
   }
  ]
 }
