@@ -29,18 +29,6 @@
  ],
  "cases": [
   {
-   "id": "9a0f159910",
-   "caseNo": "1",
-   "title": "หา Switch",
-   "detail": "หา Switch ที่หายไป",
-   "date": "2026-11-12",
-   "status": "เสร็จสิ้น",
-   "owner": "4485c7755c",
-   "createdAt": 1794476982283,
-   "createdBy": "4485c7755c",
-   "members": []
-  },
-  {
    "id": "31eed05a17",
    "caseNo": "Open LAN Line port for EVENT apple",
    "title": "access network LAN Line for customer event apple",
@@ -89,72 +77,7 @@
    "createdBy": "0e10ff86cc"
   }
  ],
- "logs": [
-  {
-   "id": "d433a91ffa",
-   "caseId": "9a0f159910",
-   "text": "ใกล้เจอเเล้ว",
-   "by": "4485c7755c",
-   "byName": "Nice",
-   "at": 1794477042572
-  },
-  {
-   "id": "1ad4cf7351",
-   "caseId": "9a0f159910",
-   "text": "กำลังหา",
-   "by": "d758605df1",
-   "byName": "P'Fluk",
-   "at": 1794477057787
-  },
-  {
-   "id": "7345a17285",
-   "caseId": "9a0f159910",
-   "text": "P'Fluk เข้าร่วมเคส",
-   "by": "d758605df1",
-   "byName": "P'Fluk",
-   "at": 1794478649359
-  },
-  {
-   "id": "81855a358e",
-   "caseId": "9a0f159910",
-   "text": "P'Fluk ออกจากเคส",
-   "by": "d758605df1",
-   "byName": "P'Fluk",
-   "at": 1794478651999
-  },
-  {
-   "id": "b4f64165f4",
-   "caseId": "9a0f159910",
-   "text": "P'Fluk เข้าร่วมเคส",
-   "by": "d758605df1",
-   "byName": "P'Fluk",
-   "at": 1794478657243
-  },
-  {
-   "id": "29829cfa85",
-   "caseId": "9a0f159910",
-   "text": "P'Fluk ออกจากเคส",
-   "by": "d758605df1",
-   "byName": "P'Fluk",
-   "at": 1794478661643
-  },
-  {
-   "id": "65ace98f92",
-   "caseId": "9a0f159910",
-   "text": "เจอแล้ว",
-   "by": "4485c7755c",
-   "byName": "Nice",
-   "at": 1794479114325
-  },
-  {
-   "id": "234edeeddf",
-   "caseId": "9a0f159910",
-   "text": "เปลี่ยนสถานะเป็น เสร็จสิ้น",
-   "by": "4485c7755c",
-   "byName": "Nice",
-   "at": 1794479148582
-  }
- ],
+ "logs": [],
  "properties": [
   {
    "id": "8b79990c7c",
