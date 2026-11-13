@@ -40,7 +40,10 @@
    "location": "ballroom A (M floor)",
    "members": [],
    "createdAt": 1794481719863,
-   "createdBy": "4485c7755c"
+   "createdBy": "4485c7755c",
+   "zone": "1",
+   "marsha": "BKKBR",
+   "photos": []
   },
   {
    "id": "401840e8e0",
@@ -77,7 +80,16 @@
    "createdBy": "0e10ff86cc"
   }
  ],
- "logs": [],
+ "logs": [
+  {
+   "id": "17cb8b6316",
+   "caseId": "31eed05a17",
+   "text": "เปลี่ยน MARSHA เป็น BKKBR",
+   "by": "4485c7755c",
+   "byName": "Nice",
+   "at": 1794535124522
+  }
+ ],
  "properties": [
   {
    "id": "8b79990c7c",
