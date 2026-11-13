@@ -173,7 +173,7 @@
    "title": "error GMS",
    "detail": "error GMS databases now back to normal Lucas update GMS then update database all outlet",
    "date": "2026-11-13",
-   "status": "กำลังดำเนินการ",
+   "status": "เสร็จสิ้น",
    "owner": "466fc9248e",
    "category": "POS/PMS",
    "location": "All outlet",
@@ -241,6 +241,14 @@
    "by": "466fc9248e",
    "byName": "Phisit",
    "at": 1794552429542
+  },
+  {
+   "id": "44ec099654",
+   "caseId": "8ef560c15e",
+   "text": "เปลี่ยนสถานะเป็น เสร็จสิ้น",
+   "by": "466fc9248e",
+   "byName": "Phisit",
+   "at": 1794552438254
   }
  ],
  "properties": [
